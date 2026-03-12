@@ -22,10 +22,13 @@ public class browserHistory {
         visit("reddit11");
         visit("reddit12");
 
+
         System.out.print("list: ");
         printList(head);
         System.out.println("current: " + current.url);
 
+        back();
+        back();
         back();
         back();
         back();
@@ -51,23 +54,14 @@ public class browserHistory {
         int start = allVisited.indexOf(startUrl);
         int end = allVisited.lastIndexOf(endUrl);
 
-        if (start == -1 || end == -1) {
-            System.out.println("URL bulunamadı");
+        if (start == -1 || end == -1 || start >= end) {
+            System.out.println("Arada silinecek URL yok.");
             return;
         }
 
-        if (start == end) {
-            System.out.println("Sadece 1 adet aynı url mevcut. Aralık yok.");
-            return;
+        for (int i = end - 1; i > start; i--) {
+            allVisited.remove(i);
         }
-
-        if (start > end) {
-            int temp = start;
-            start = end;
-            end = temp;
-        }
-
-        allVisited.subList(start + 1, end).clear();
     }
 
     public static void printAllHistory(ArrayList<String> history){
