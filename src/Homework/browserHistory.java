@@ -19,10 +19,12 @@ public class browserHistory {
         visit("reddit8");
         visit("reddit9");
         visit("reddit10");
+        visit("reddit11");
+        visit("reddit12");
 
         System.out.print("list: ");
-        printList(head); // github -> facebook -> google
-        System.out.println("current: " + current.url); // github
+        printList(head);
+        System.out.println("current: " + current.url);
 
         back();
         back();
@@ -34,8 +36,8 @@ public class browserHistory {
         System.out.println("visit: deneme");
         visit("deneme");
         System.out.print("list: ");
-        printList(head); // reddit -> github -> facebook -> google
-        System.out.println("current: " + current.url); // reddit
+        printList(head);
+        System.out.println("current: " + current.url);
 
         System.out.println("All visited pages:");
         printAllHistory(allVisited);
